@@ -1,0 +1,96 @@
+.visao-geral {
+  .box-data {
+    display: flex;
+    justify-content: space-between;
+    transition: 0.8s all;
+  }
+
+  .card-details {
+    background-color: #B2E3FF;
+    width: 100%;
+    height: 134px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all;
+
+    &:hover {
+      -webkit-box-shadow: 2px 2px 10px -4px rgba(0,0,0,0.65); 
+      box-shadow: 0px 2px 10px -4px rgba(0,0,0,0.65);
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .title {
+      color: $color-title-card;
+      font-size: 19px !important;
+    }
+
+    .information {
+      color: $color-information-card;
+      font-size: 26px;
+      font-weight: 800;
+    }
+  }
+
+  .box-grafic {
+    margin-top: 50px;
+
+    .title-grafic {
+      color: $color-09;
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .btn-date {
+      margin-left: 10px;
+    }
+    
+    .select-date {
+      cursor: pointer;
+      transition: .8s all;
+    
+      &:hover {
+        color: $color-07;
+      }
+    }
+
+    .grafic {
+      margin-top: 20px;
+      min-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  }
+
+}
+
+
+
+@media (max-height: 780px) {
+  @media (min-width: 960px) {
+    .visao-geral {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .visao-geral {
+    height: 85vh;
+    max-height: 85vh;
+  }
+}
+
+@media (min-height: 1000px) {
+  .add-center {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
