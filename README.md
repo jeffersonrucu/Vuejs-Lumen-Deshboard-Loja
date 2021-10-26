@@ -12,6 +12,8 @@
 
 4. php 7.4>
 
+<hr>
+
 <p align="center">Guia Rápido para iniciar o projeto em seu hambiente </p>
 <br>
 
