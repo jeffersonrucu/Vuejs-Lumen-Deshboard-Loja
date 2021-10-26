@@ -4,7 +4,6 @@ backend/Homestead.json
 backend/Homestead.yaml
 backend/.env
 backend/.phpunit.result.cache
-backend/images/products/
 
 # Gitignore Front End
 
