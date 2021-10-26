@@ -1,7 +1,7 @@
 <template>
   <div class="top-page">
     <h2>{{this.$store.state.page }}</h2>
-    <div class="box-avatar">
+    <!-- <div class="box-avatar">
       <v-divider
         vertical
       ></v-divider>
@@ -14,7 +14,7 @@
           alt="Jefferson"
         >
       </v-avatar>
-    </div>
+    </div> -->
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <div id="login" v-if="acess === false">
+    <div id="login" v-if="register === false">
       <v-content class="height-100vh">
          <v-container fluid fill-height >
             <v-layout align-center justify-center aligh-center>
@@ -29,11 +29,54 @@
                           >
                             {{error.error}}
                           </v-alert>
+                          <a @click="register = !register">registrar-se</a>
                         </v-form>
                      </v-card-text>
                      <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="primary" @click="login">Entrar</v-btn>
+                     </v-card-actions>
+                  </v-card>
+               </v-flex>
+            </v-layout>
+         </v-container>
+      </v-content>
+    </div>
+
+    <div id="login" v-if="register === true">
+      <v-content class="height-100vh">
+         <v-container fluid fill-height >
+            <v-layout align-center justify-center aligh-center>
+               <v-flex xs12 sm8 md4>
+                  <v-card class="elevation-12">
+                     <v-toolbar dark color="primary">
+                        <v-toolbar-title>Registrar-se</v-toolbar-title>
+                     </v-toolbar>
+                     <v-card-text>
+                        <v-form>
+                          <v-text-field
+                            label="Nome"
+                            type="text"
+                            v-model="user.name"
+                            required
+                          ></v-text-field>
+                          <v-text-field
+                            label="E-mail"
+                            type="text"
+                            v-model="user.email"
+                            required
+                          ></v-text-field>
+                          <v-text-field
+                            label="Senha"
+                            type="password"
+                            v-model="user.password"
+                            required
+                          ></v-text-field>
+                        </v-form>
+                     </v-card-text>
+                     <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="primary" @click="registerUser">Registrar</v-btn>
                      </v-card-actions>
                   </v-card>
                </v-flex>
@@ -68,7 +111,9 @@ export default {
   data () {
     return {
       acess: false,
+      register: false,
       user: {
+        name: '',
         email: '',
         password: ''
       },
@@ -95,6 +140,7 @@ export default {
           }
         })
         .then((response) => {
+          this.register = null
           this.acess = true
         })
         .catch(error => {
@@ -117,12 +163,28 @@ export default {
           .then((response) => {
             localStorage.id = response.data.id
             localStorage.token = response.data.token
+            this.register = null
             this.acess = true
           })
           .catch((error) => {
             that.error = error.response.data
           })
       }
+    },
+    registerUser () {
+      var that = this
+      axios
+        .post('http://localhost:8010/user/register', {
+          name: this.user.name,
+          email: this.user.email,
+          password: this.user.password
+        })
+        .then((response) => {
+          this.register = !this.register
+        })
+        .catch((error) => {
+          that.error = error.response.data
+        })
     }
   }
 }

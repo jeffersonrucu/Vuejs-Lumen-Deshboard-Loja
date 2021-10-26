@@ -16,12 +16,13 @@
   	`DB_DATABASE=nome_banco`   // Nome do Banco de Dados <br>
     `DB_USERNAME=usuario_banco`   // Usuario do Banco de Dados <br>
     `DB_PASSWORD=senha_banco`   // Senha do Banco de Dados <br>
+		`JWT_SECRET=caminho absoluto/0_Controle_de_Vendas/backend/images`   // caminho absoluto da imagem <br>
 
-5. Agora dentro da pasta **./backend** rodamos o seguinte comando no terminal.
-5.1 com
+5. Agora dentro da pasta **./backend** rodamos o seguinte comando no terminal. <br>
+	5.1 composer install <br>
+	5.2 php -S localhost:8010 -t public
 
-<hr>
-<p align="center">UML da Estrutura Básica do Banco de Dados </p>
-<br>
 
-![alt text](https://github.com/jeffersonrucu/Vuejs-Lumen-Deshboard-Loja/blob/master/Relacionamentos_banco.png?raw=true)
+4. Agora dentro da pasta **./frontend** rodamos o seguinte comando no terminal. <br>
+	4.1 npm install <br>
+	4.2 npm run serve
