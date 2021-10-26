@@ -19,7 +19,7 @@
 
 1. Crie um banco de dados
 
-2. Atualizze o nome do arquivo **./backend/.env example** para  **./backend/.env**..
+2. Atualize o nome do arquivo **./backend/.env example** para  **./backend/.env**..
 
 3. Depois do banco de dados criado vamos realizar as devidas modificações no arquivo **./backend/.env**.
 
