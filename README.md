@@ -1,6 +1,17 @@
 <h1 align="center">Vuejs Lumen Deshboard para Loja</h1>
 <br>
 
+<p align="center">Pré requisitos </p>
+<br>
+
+1. npm
+
+2. composer
+
+3. servidor local para rodar php
+
+4. php 7.4>
+
 <p align="center">Guia Rápido para iniciar o projeto em seu hambiente </p>
 <br>
 
